@@ -28,9 +28,9 @@
 #include "common/utils.h"
 #include "common/logic_condition.h"
 #include "common/global_functions.h"
-/*IBHM*/
+/*CBTL*/
 #include "custom/custom.h"
-/*IBHM*/
+/*CBTL*/
 #include "drivers/accgyro/accgyro.h"
 #include "drivers/compass/compass.h"
 #include "drivers/sensor.h"
@@ -349,9 +349,9 @@ void fcTasksInit(void)
 #ifdef USE_GLOBAL_FUNCTIONS
     setTaskEnabled(TASK_GLOBAL_FUNCTIONS, true);
 #endif
-/*IBHM*/
+/*CBTL*/
 setTaskEnabled(TASK_CUSTOM_SERIAL_TEST,true);
-/*IBHM*/
+/*CBTL*/
 }
 
 cfTask_t cfTasks[TASK_COUNT] = {
@@ -581,12 +581,12 @@ cfTask_t cfTasks[TASK_COUNT] = {
         .staticPriority = TASK_PRIORITY_LOW,
     },
 #endif
-/*IBHM*/
+/*CBTL*/
  [TASK_CUSTOM_SERIAL_TEST] = {
         .taskName = "CustSerTest",
         .taskFunc = customSerialTest,
         .desiredPeriod = TASK_PERIOD_HZ(1000),
         .staticPriority = TASK_PRIORITY_LOW,
     },
-/*IBHM*/    
+/*CBTL*/    
 };
